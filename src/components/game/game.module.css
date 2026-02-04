@@ -1,0 +1,434 @@
+/* ============================================
+   Election Poker - Display Styles
+   ============================================ */
+
+/* Container */
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e94560;
+  letter-spacing: 2px;
+}
+
+.roundInfo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.roundBadge {
+  background: #e94560;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.phaseBadge {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 16px;
+  font-size: 1rem;
+}
+
+.connectionStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.connectionDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.connected {
+  background: #4ade80;
+  box-shadow: 0 0 8px #4ade80;
+}
+
+.disconnected {
+  background: #ef4444;
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  position: relative;
+}
+
+/* Intro Screen */
+.introScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.introLogo {
+  font-size: 6rem;
+  font-weight: bold;
+  color: #e94560;
+  text-shadow: 0 0 40px rgba(233, 69, 96, 0.5);
+  margin-bottom: 20px;
+  letter-spacing: 8px;
+}
+
+.introSubtitle {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 4px;
+}
+
+/* Round Start Screen */
+.roundStartScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: scaleIn 0.5s ease-out;
+}
+
+.roundNumber {
+  font-size: 8rem;
+  font-weight: bold;
+  color: #ffd700;
+  text-shadow: 0 0 60px rgba(255, 215, 0, 0.5);
+}
+
+.roundLabel {
+  font-size: 3rem;
+  color: white;
+  margin-top: -20px;
+}
+
+/* Player Circle Layout */
+.playerCircle {
+  position: relative;
+  width: 700px;
+  height: 700px;
+}
+
+.playerSlot {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translate(-50%, -50%);
+}
+
+.playerNumber {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2d2d44 0%, #1a1a2e 100%);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.playerNumber.firstPlayer {
+  border-color: #ffd700;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.playerNumber.currentPlayer {
+  border-color: #e94560;
+  box-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+  animation: pulse 1.5s infinite;
+}
+
+.playerStatus {
+  margin-top: 8px;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.statusRun {
+  background: #22c55e;
+  color: white;
+}
+
+.statusGiveup {
+  background: #6b7280;
+  color: white;
+}
+
+.statusNull {
+  background: transparent;
+  color: transparent;
+}
+
+/* Timer Display */
+.timerContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.timerDisplay {
+  font-size: 5rem;
+  font-weight: bold;
+  color: white;
+  font-family: 'Courier New', monospace;
+}
+
+.timerDisplay.warning {
+  color: #f59e0b;
+  animation: blink 1s infinite;
+}
+
+.timerDisplay.danger {
+  color: #ef4444;
+  animation: blink 0.5s infinite;
+}
+
+.timerLabel {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 10px;
+}
+
+/* Speech Cards */
+.speechCards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 120px;
+  height: 168px;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.cardRed {
+  color: #e94560;
+}
+
+.cardBlack {
+  color: #1a1a2e;
+}
+
+/* Vote Display */
+.voteContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.voteTitle {
+  font-size: 2rem;
+  color: white;
+}
+
+.voteGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.voteItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.voteArrow {
+  font-size: 1.5rem;
+  color: #e94560;
+}
+
+/* Round End */
+.roundEndScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.winnerAnnouncement {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.winnerNumber {
+  font-size: 10rem;
+  font-weight: bold;
+  color: #ffd700;
+  text-shadow: 0 0 80px rgba(255, 215, 0, 0.6);
+  animation: glow 2s infinite alternate;
+}
+
+.winnerLabel {
+  font-size: 3rem;
+  color: #e94560;
+}
+
+/* Rankings */
+.rankingsContainer {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.rankingItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.rankingPosition {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.rankingPosition.gold {
+  color: #ffd700;
+}
+
+.rankingPosition.silver {
+  color: #c0c0c0;
+}
+
+.rankingPosition.bronze {
+  color: #cd7f32;
+}
+
+.rankingPlayer {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Loading */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #e94560;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 60px rgba(255, 215, 0, 0.4);
+  }
+  to {
+    text-shadow: 0 0 100px rgba(255, 215, 0, 0.8);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
