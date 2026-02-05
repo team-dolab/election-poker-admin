@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Noto_Sans_KR, Orbitron, Share_Tech_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const notoSansKR = Noto_Sans_KR({
+  variable: "--font-main",
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const orbitron = Orbitron({
+  variable: "--font-title",
   subsets: ["latin"],
+  weight: ["400", "500", "700", "900"],
+});
+
+const shareTechMono = Share_Tech_Mono({
+  variable: "--font-tech",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -25,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${notoSansKR.variable} ${orbitron.variable} ${shareTechMono.variable} antialiased`}
       >
         {children}
       </body>

@@ -3,6 +3,8 @@
 import { useSupabaseGameState } from '@/hooks/useSupabaseGameState';
 import Header from './Header';
 import MainStage from './MainStage';
+import Scanlines from './effects/Scanlines';
+import HUDCorners from './effects/HUDCorners';
 import styles from './game.module.css';
 
 export default function DisplayScreen() {
@@ -25,6 +27,10 @@ export default function DisplayScreen() {
 
   return (
     <div className={styles.container}>
+      {/* 시각 효과 레이어 */}
+      <Scanlines />
+      <HUDCorners />
+
       <Header gameState={gameState} isConnected={isConnected} />
       <main className={styles.main}>
         <MainStage gameState={gameState} />

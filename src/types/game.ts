@@ -9,6 +9,28 @@ export const CARD_VALUES = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', '
 export type CardSuit = typeof CARD_SUITS[number];
 export type CardValue = typeof CARD_VALUES[number];
 
+// 카드 덱 (전체)
+export const CARD_DECK = {
+  spades: ['♠A', '♠2', '♠3', '♠4', '♠5', '♠6', '♠7', '♠8', '♠9', '♠10', '♠J', '♠Q', '♠K'],
+  hearts: ['♥A', '♥2', '♥3', '♥4', '♥5', '♥6', '♥7', '♥8', '♥9', '♥10', '♥J', '♥Q', '♥K'],
+  diamonds: ['♦A', '♦2', '♦3', '♦4', '♦5', '♦6', '♦7', '♦8', '♦9', '♦10', '♦J', '♦Q', '♦K'],
+  clubs: ['♣A', '♣2', '♣3', '♣4', '♣5', '♣6', '♣7', '♣8', '♣9', '♣10', '♣J', '♣Q', '♣K'],
+} as const;
+
+// 포커 핸드 랭킹
+export const HAND_RANKINGS = [
+  { rank: 1, name: 'Royal Flush', korean: '로열 플러시' },
+  { rank: 2, name: 'Straight Flush', korean: '스트레이트 플러시' },
+  { rank: 3, name: 'Four of a Kind', korean: '포카드' },
+  { rank: 4, name: 'Full House', korean: '풀하우스' },
+  { rank: 5, name: 'Flush', korean: '플러시' },
+  { rank: 6, name: 'Straight', korean: '스트레이트' },
+  { rank: 7, name: 'Three of a Kind', korean: '트리플' },
+  { rank: 8, name: 'Two Pair', korean: '투 페어' },
+  { rank: 9, name: 'One Pair', korean: '원 페어' },
+  { rank: 10, name: 'High Card', korean: '하이 카드' },
+] as const;
+
 // 뷰 모드별 정보
 export const VIEW_MODE_INFO = {
   intro: { label: 'DO:LAB', description: 'DO:LAB 로고' },
